@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leerkrachten Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-section">
+                <div class="logo-icon">📚</div>
+                <div>
+                    <h1>Leerkrachten Dashboard</h1>
+                    <p>Interactieve klasactiviteiten</p>
+                </div>
+            </div>
+            <button class="btn-primary">➕ Nieuwe Activiteit</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Welcome Section -->
+            <div class="welcome-card">
+                <h2>Welkom! 👋</h2>
+                <p>Selecteer een activiteit hieronder om te starten. Alle activiteiten zijn interactief en geschikt voor gebruik in de klas.</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div>
+                            <p class="stat-label">Totaal Activiteiten</p>
+                            <p class="stat-value purple">6</p>
+                        </div>
+                        <div class="stat-icon">📊</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div>
+                            <p class="stat-label">Deze Week</p>
+                            <p class="stat-value blue">3</p>
+                        </div>
+                        <div class="stat-icon">📅</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div>
+                            <p class="stat-label">Categorieën</p>
+                            <p class="stat-value green">5</p>
+                        </div>
+                        <div class="stat-icon">🗂️</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activities Grid -->
+            <div class="section-header">
+                <h3>Alle Activiteiten</h3>
+            </div>
+            
+            <div class="activities-grid">
+                <!-- Activity 1 - WERKEND -->
+                <a href="activities/woordenschat-week2.html" class="activity-card">
+                    <div class="activity-header purple-gradient">
+                        <div class="activity-icon">🔍</div>
+                        <span class="activity-badge">Nederlands</span>
+                    </div>
+                    <div class="activity-body">
+                        <h3>Woordenschat-Speurneuzen Week 2</h3>
+                        <p>Griezelen - 8 opdrachten met geheime code</p>
+                        <div class="activity-footer">
+                            <span class="activity-link">Start activiteit</span>
+                            <span class="arrow">→</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Activity 2 -->
+                <div class="activity-card coming-soon">
+                    <div class="activity-header blue-gradient">
+                        <div class="activity-icon">🔢</div>
+                        <span class="activity-badge">Rekenen</span>
+                    </div>
+                    <div class="activity-body">
+                        <h3>Rekenen Mysteries</h3>
+                        <p>Los de wiskundige raadsels op</p>
+                        <div class="activity-footer">
+                            <span class="activity-link">Binnenkort beschikbaar</span>
+                            <span class="arrow">🚧</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="activity-card coming-soon">
+                    <div class="activity-header green-gradient">
+                        <div class="activity-icon">🕵️</div>
+                        <span class="activity-badge">Nederlands</span>
+                    </div>
+                    <div class="activity-body">
+                        <h3>Spelling Detective</h3>
+                        <p>Vind de spelfouten in de tekst</p>
+                        <div class="activity-footer">
+                            <span class="activity-link">Binnenkort beschikbaar</span>
+                            <span class="arrow">🚧</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="activity-card coming-soon">
+                    <div class="activity-header orange-gradient">
+                        <div class="activity-icon">⏰</div>
+                        <span class="activity-badge">Wereldoriëntatie</span>
+                    </div>
+                    <div class="activity-body">
+                        <h3>Geschiedenis Tijdreizen</h3>
+                        <p>Ontdek belangrijke historische momenten</p>
+                        <div class="activity-footer">
+                            <span class="activity-link">Binnenkort beschikbaar</span>
+                            <span class="arrow">🚧</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="activity-card coming-soon">
+                    <div class="activity-header teal-gradient">
+                        <div class="activity-icon">🌱</div>
+                        <span class="activity-badge">Biologie</span>
+                    </div>
+                    <div class="activity-body">
+                        <h3>Natuur Ontdekkers</h3>
+                        <p>Leer over dieren en planten</p>
+                        <div class="activity-footer">
+                            <span class="activity-link">Binnenkort beschikbaar</span>
+                            <span class="arrow">🚧</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 6 -->
+                <div class="activity-card coming-soon">
+                    <div class="activity-header red-gradient">
+                        <div class="activity-icon">🇬🇧</div>
+                        <span class="activity-badge">Engels</span>
+                    </div>
+                    <div class="activity-body">
+                        <h3>Engels Adventure</h3>
+                        <p>Leer Engelse woorden spelenderwijs</p>
+                        <div class="activity-footer">
+                            <span class="activity-link">Binnenkort beschikbaar</span>
+                            <span class="arrow">🚧</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h3>Snelle Acties</h3>
+                <div class="actions-grid">
+                    <button class="action-btn purple">
+                        <span class="action-icon">📄</span>
+                        <span>Print Werkbladen</span>
+                    </button>
+                    <button class="action-btn blue">
+                        <span class="action-icon">📊</span>
+                        <span>Bekijk Resultaten</span>
+                    </button>
+                    <button class="action-btn green">
+                        <span class="action-icon">⚙️</span>
+                        <span>Instellingen</span>
+                    </button>
+                    <button class="action-btn orange">
+                        <span class="action-icon">❓</span>
+                        <span>Help & Support</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>📚 Leerkrachten Dashboard - Gemaakt met ❤️ voor het onderwijs</p>
+    </footer>
+</body>
+</html>
