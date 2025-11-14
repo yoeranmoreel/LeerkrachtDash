@@ -3,195 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leerkrachten Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Yoeran's ATLAS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            color: white;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        header .subtitle {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 0 40px var(--glow-color);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .glass-card h2 {
+            font-size: 1.4rem;
+            color: white;
+            font-weight: 500;
+            margin-top: 16px;
+            position: relative;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .glass-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+            line-height: 1.4;
+            position: relative;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* Icon */
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: white;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .glass-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Specific card colors */
+        .card-spellen {
+            --glow-color: rgba(147, 51, 234, 0.5);
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.2) 0%, rgba(126, 34, 206, 0.15) 100%);
+        }
+        
+        .card-quizzes {
+            --glow-color: rgba(59, 130, 246, 0.5);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.15) 100%);
+        }
+        
+        .card-spelling {
+            --glow-color: rgba(16, 185, 129, 0.5);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.15) 100%);
+        }
+        
+        .card-rekenen {
+            --glow-color: rgba(249, 115, 22, 0.5);
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(234, 88, 12, 0.15) 100%);
+        }
+        
+        .card-taal {
+            --glow-color: rgba(236, 72, 153, 0.5);
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2) 0%, rgba(219, 39, 119, 0.15) 100%);
+        }
+        
+        .card-extra {
+            --glow-color: rgba(168, 85, 247, 0.5);
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(147, 51, 234, 0.15) 100%);
+        }
+        
+        .card-links {
+            --glow-color: rgba(20, 184, 166, 0.5);
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.2) 0%, rgba(13, 148, 136, 0.15) 100%);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .subtitle {
+                font-size: 0.75rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .card-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+
+            .glass-card h2 {
+                font-size: 1.2rem;
+            }
+
+            .glass-card p {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container header-content">
-            <div class="logo-section">
-                <div class="logo-icon">📚</div>
-                <div>
-                    <h1>Leerkrachten Dashboard</h1>
-                    <p>Interactieve klasactiviteiten</p>
-                </div>
-            </div>
-            <button class="btn-primary">➕ Nieuwe Activiteit</button>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Yoeran's ATLAS</h1>
+            <p class="subtitle">Advanced Teaching & Learning Activity System</p>
+        </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <!-- Welcome Section -->
-            <div class="welcome-card">
-                <h2>Welkom! 👋</h2>
-                <p>Selecteer een activiteit hieronder om te starten. Alle activiteiten zijn interactief en geschikt voor gebruik in de klas.</p>
-            </div>
-
-            <!-- Stats Cards -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div>
-                            <p class="stat-label">Totaal Activiteiten</p>
-                            <p class="stat-value purple">6</p>
-                        </div>
-                        <div class="stat-icon">📊</div>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div>
-                            <p class="stat-label">Deze Week</p>
-                            <p class="stat-value blue">3</p>
-                        </div>
-                        <div class="stat-icon">📅</div>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div>
-                            <p class="stat-label">Categorieën</p>
-                            <p class="stat-value green">5</p>
-                        </div>
-                        <div class="stat-icon">🗂️</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activities Grid -->
-            <div class="section-header">
-                <h3>Alle Activiteiten</h3>
-            </div>
-            
-            <div class="activities-grid">
-                <!-- Activity 1 - WERKEND -->
-                <a href="activities/woordenschat-week2.html" class="activity-card">
-                    <div class="activity-header purple-gradient">
-                        <div class="activity-icon">🔍</div>
-                        <span class="activity-badge">Nederlands</span>
-                    </div>
-                    <div class="activity-body">
-                        <h3>Woordenschat-Speurneuzen Week 2</h3>
-                        <p>Griezelen - 8 opdrachten met geheime code</p>
-                        <div class="activity-footer">
-                            <span class="activity-link">Start activiteit</span>
-                            <span class="arrow">→</span>
-                        </div>
-                    </div>
+        <main>
+            <div class="grid">
+                <a href="categories/spellen.html" class="glass-card card-spellen">
+                    <div class="card-icon">🎮</div>
+                    <h2>Spellen</h2>
+                    <p>Interactieve leerspellen</p>
                 </a>
 
-                <!-- Activity 2 -->
-                <div class="activity-card coming-soon">
-                    <div class="activity-header blue-gradient">
-                        <div class="activity-icon">🔢</div>
-                        <span class="activity-badge">Rekenen</span>
-                    </div>
-                    <div class="activity-body">
-                        <h3>Rekenen Mysteries</h3>
-                        <p>Los de wiskundige raadsels op</p>
-                        <div class="activity-footer">
-                            <span class="activity-link">Binnenkort beschikbaar</span>
-                            <span class="arrow">🚧</span>
-                        </div>
-                    </div>
-                </div>
+                <a href="categories/quizzes.html" class="glass-card card-quizzes">
+                    <div class="card-icon">🎓</div>
+                    <h2>Quizzes</h2>
+                    <p>Kennistoetsen</p>
+                </a>
 
-                <!-- Activity 3 -->
-                <div class="activity-card coming-soon">
-                    <div class="activity-header green-gradient">
-                        <div class="activity-icon">🕵️</div>
-                        <span class="activity-badge">Nederlands</span>
+                <a href="categories/spelling.html" class="glass-card card-spelling">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="5" y="15" font-size="14" font-weight="bold" fill="white">A</text>
+                            <text x="20" y="25" font-size="12" font-weight="bold" fill="white">b</text>
+                            <text x="8" y="32" font-size="10" font-weight="bold" fill="white">c?</text>
+                        </svg>
                     </div>
-                    <div class="activity-body">
-                        <h3>Spelling Detective</h3>
-                        <p>Vind de spelfouten in de tekst</p>
-                        <div class="activity-footer">
-                            <span class="activity-link">Binnenkort beschikbaar</span>
-                            <span class="arrow">🚧</span>
-                        </div>
-                    </div>
-                </div>
+                    <h2>Spelling</h2>
+                    <p>Correcte schrijfwijze</p>
+                </a>
 
-                <!-- Activity 4 -->
-                <div class="activity-card coming-soon">
-                    <div class="activity-header orange-gradient">
-                        <div class="activity-icon">⏰</div>
-                        <span class="activity-badge">Wereldoriëntatie</span>
+                <a href="categories/rekenen.html" class="glass-card card-rekenen">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="2" y="15" font-size="16" font-weight="bold" fill="white">+</text>
+                            <text x="18" y="15" font-size="16" font-weight="bold" fill="white">−</text>
+                            <text x="2" y="32" font-size="16" font-weight="bold" fill="white">×</text>
+                            <text x="18" y="32" font-size="16" font-weight="bold" fill="white">÷</text>
+                        </svg>
                     </div>
-                    <div class="activity-body">
-                        <h3>Geschiedenis Tijdreizen</h3>
-                        <p>Ontdek belangrijke historische momenten</p>
-                        <div class="activity-footer">
-                            <span class="activity-link">Binnenkort beschikbaar</span>
-                            <span class="arrow">🚧</span>
-                        </div>
-                    </div>
-                </div>
+                    <h2>Rekenen</h2>
+                    <p>Wiskundige opdrachten</p>
+                </a>
 
-                <!-- Activity 5 -->
-                <div class="activity-card coming-soon">
-                    <div class="activity-header teal-gradient">
-                        <div class="activity-icon">🌱</div>
-                        <span class="activity-badge">Biologie</span>
+                <a href="categories/taal.html" class="glass-card card-taal">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="2" y="20" font-size="18" font-weight="bold" fill="white">ABC</text>
+                        </svg>
                     </div>
-                    <div class="activity-body">
-                        <h3>Natuur Ontdekkers</h3>
-                        <p>Leer over dieren en planten</p>
-                        <div class="activity-footer">
-                            <span class="activity-link">Binnenkort beschikbaar</span>
-                            <span class="arrow">🚧</span>
-                        </div>
-                    </div>
-                </div>
+                    <h2>Taal</h2>
+                    <p>Woordenschat</p>
+                </a>
 
-                <!-- Activity 6 -->
-                <div class="activity-card coming-soon">
-                    <div class="activity-header red-gradient">
-                        <div class="activity-icon">🇬🇧</div>
-                        <span class="activity-badge">Engels</span>
-                    </div>
-                    <div class="activity-body">
-                        <h3>Engels Adventure</h3>
-                        <p>Leer Engelse woorden spelenderwijs</p>
-                        <div class="activity-footer">
-                            <span class="activity-link">Binnenkort beschikbaar</span>
-                            <span class="arrow">🚧</span>
-                        </div>
-                    </div>
-                </div>
+                <a href="categories/extra.html" class="glass-card card-extra">
+                    <div class="card-icon">⭐</div>
+                    <h2>Extra</h2>
+                    <p>Aanvullende activiteiten</p>
+                </a>
+
+                <a href="categories/handige-links.html" class="glass-card card-links">
+                    <div class="card-icon">🔗</div>
+                    <h2>Handige Links</h2>
+                    <p>Externe bronnen</p>
+                </a>
             </div>
+        </main>
 
-            <!-- Quick Actions -->
-            <div class="quick-actions">
-                <h3>Snelle Acties</h3>
-                <div class="actions-grid">
-                    <button class="action-btn purple">
-                        <span class="action-icon">📄</span>
-                        <span>Print Werkbladen</span>
-                    </button>
-                    <button class="action-btn blue">
-                        <span class="action-icon">📊</span>
-                        <span>Bekijk Resultaten</span>
-                    </button>
-                    <button class="action-btn green">
-                        <span class="action-icon">⚙️</span>
-                        <span>Instellingen</span>
-                    </button>
-                    <button class="action-btn orange">
-                        <span class="action-icon">❓</span>
-                        <span>Help & Support</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>📚 Leerkrachten Dashboard - Yoeran Moreel </p>
-    </footer>
+        <footer>
+            <p>Leerkrachten Dashboard &copy; Yoeran Moreel</p>
+        </footer>
+    </div>
 </body>
 </html>
