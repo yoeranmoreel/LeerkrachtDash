@@ -5,29 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Spellen – Yoeran’s ATLAS</title>
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+<a href="../index.html" class="back-button">← Terug naar Dashboard</a>
+
 <div class="container">
-    <header>
+
+    <header class="category-header">
         <h1>Spellen</h1>
-        <p class="subtitle">Interactieve educatieve games</p>
+        <p class="subtitle">Interactieve en leerzame spelactiviteiten</p>
     </header>
 
     <main>
-        <div class="content-block">
-            <h2>Beschikbare spellen</h2>
-            <ul class="nice-list">
-                <li><a href="#">Memory</a></li>
-                <li><a href="#">Boter Kaas & Eieren</a></li>
-                <li><a href="#">Flitskaartenspel</a></li>
-            </ul>
+
+        <div class="activities-grid">
+
+            <a href="#" class="activity-card">
+                <div class="activity-header purple-gradient">
+                    <i class="fa-solid fa-gamepad activity-icon"></i>
+                    <span class="activity-badge">Spel</span>
+                </div>
+                <div class="activity-body">
+                    <h3>Memory</h3>
+                    <p>Train het geheugen van leerlingen met speelse kaartcombinaties.</p>
+                    <div class="activity-footer">
+                        <span class="activity-link">Start</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="activity-card">
+                <div class="activity-header blue-gradient">
+                    <i class="fa-solid fa-puzzle-piece activity-icon"></i>
+                    <span class="activity-badge">Spel</span>
+                </div>
+                <div class="activity-body">
+                    <h3>Puzzels</h3>
+                    <p>Oplossingsgericht denken en samenwerken in één activiteit.</p>
+                    <div class="activity-footer">
+                        <span class="activity-link">Start</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
         </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="#" class="btn-primary">+ Nieuw spel toevoegen</a>
+        </div>
+
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; Yoeran Moreel – ATLAS</p>
     </footer>
+
 </div>
 
 </body>
