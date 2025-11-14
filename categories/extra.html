@@ -5,33 +5,85 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Extra – Yoeran’s ATLAS</title>
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-    <a href="../index.html" class="back-button">← Terug naar Dashboard</a>
+<a href="../index.html" class="back-button">← Terug naar Dashboard</a>
 
 <div class="container">
-    <header>
+
+    <header class="category-header">
         <h1>Extra</h1>
-        <p class="subtitle">Aanvullende activiteiten</p>
+        <p class="subtitle">Aanvullende activiteiten en materiaal</p>
     </header>
 
     <main>
-        <div class="content-block">
-            <h2>Extra onderdelen</h2>
-            <ul class="nice-list">
-                <li><a href="#">Projectopdrachten</a></li>
-                <li><a href="#">Creatieve opdrachten</a></li>
-                <li><a href="#">Klasuitdagingen</a></li>
-            </ul>
+
+        <div class="activities-grid">
+
+            <!-- Card 1 -->
+            <a href="#" class="activity-card">
+                <div class="activity-header purple-gradient">
+                    <i class="fa-solid fa-lightbulb activity-icon"></i>
+                    <span class="activity-badge">Project</span>
+                </div>
+                <div class="activity-body">
+                    <h3>Projectopdrachten</h3>
+                    <p>Verdiepende opdrachten voor groeps- of solo-uitvoering.</p>
+                    <div class="activity-footer">
+                        <span class="activity-link">Bekijk</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="#" class="activity-card">
+                <div class="activity-header blue-gradient">
+                    <i class="fa-solid fa-paint-brush activity-icon"></i>
+                    <span class="activity-badge">Creatief</span>
+                </div>
+                <div class="activity-body">
+                    <h3>Creatieve opdrachten</h3>
+                    <p>Laat leerlingen hun creativiteit en expressie ontdekken.</p>
+                    <div class="activity-footer">
+                        <span class="activity-link">Bekijk</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="#" class="activity-card">
+                <div class="activity-header green-gradient">
+                    <i class="fa-solid fa-flag-checkered activity-icon"></i>
+                    <span class="activity-badge">Uitdaging</span>
+                </div>
+                <div class="activity-body">
+                    <h3>Klasuitdagingen</h3>
+                    <p>Competitieve en samenwerkende uitdagingen voor de klas.</p>
+                    <div class="activity-footer">
+                        <span class="activity-link">Bekijk</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
         </div>
+
+        <!-- Nieuw item knop -->
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="#" class="btn-primary">+ Nieuw onderdeel toevoegen</a>
+        </div>
+
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; Yoeran Moreel – ATLAS</p>
     </footer>
+
 </div>
 
 </body>
 </html>
-
