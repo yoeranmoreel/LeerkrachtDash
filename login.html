@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATLAS - Inloggen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .login-container {
+      background: white;
+      padding: 50px;
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      max-width: 450px;
+      width: 100%;
+      animation: slideUp 0.5s ease-out;
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .logo-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .logo {
+      font-size: 72px;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    .logo-title {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .logo-subtitle {
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .welcome-text {
+      color: #999;
+      font-size: 14px;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    
+    .input-wrapper {
+      position: relative;
+    }
+    
+    .input-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #667eea;
+      font-size: 18px;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 18px 18px 18px 50px;
+      border: 2px solid #e0e0e0;
+      border-radius: 15px;
+      font-size: 16px;
+      transition: all 0.3s;
+      background: #f8f8f8;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: #667eea;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    }
+    
+    .btn-login {
+      width: 100%;
+      padding: 18px;
+      border: none;
+      border-radius: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .btn-login:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+    
+    .btn-login:active {
+      transform: translateY(0);
+    }
+    
+    .btn-login:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .error-message {
+      background: #fee;
+      border: 2px solid #fcc;
+      color: #c33;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      display: none;
+      animation: shake 0.5s;
+    }
+    
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
+    
+    .error-message.show {
+      display: block;
+    }
+    
+    .demo-accounts {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 15px;
+      border: 2px dashed #ddd;
+    }
+    
+    .demo-title {
+      font-weight: bold;
+      color: #667eea;
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+    
+    .demo-account {
+      background: white;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid #e0e0e0;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    
+    .demo-account:hover {
+      border-color: #667eea;
+      transform: translateX(5px);
+    }
+    
+    .demo-account:last-child {
+      margin-bottom: 0;
+    }
+    
+    .demo-role {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+    
+    .demo-info {
+      flex: 1;
+    }
+    
+    .demo-name {
+      font-weight: bold;
+      color: #333;
+      font-size: 14px;
+    }
+    
+    .demo-credentials {
+      color: #666;
+      font-size: 12px;
+      font-family: monospace;
+    }
+    
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #999;
+      font-size: 13px;
+    }
+    
+    @media (max-width: 500px) {
+      .login-container {
+        padding: 30px;
+      }
+      
+      .logo {
+        font-size: 56px;
+      }
+      
+      .logo-title {
+        font-size: 36px;
+      }
+      
+      .demo-accounts {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo-section">
+      <div class="logo">🎓</div>
+      <h1 class="logo-title">ATLAS</h1>
+      <p class="logo-subtitle">Basisschool Platform</p>
+      <p class="welcome-text">Log in om te beginnen</p>
+    </div>
+    
+    <div id="errorMessage" class="error-message">
+      <strong>⚠️ Fout:</strong> <span id="errorText"></span>
+    </div>
+    
+    <form id="loginForm">
+      <div class="form-group">
+        <label class="form-label">Gebruikersnaam</label>
+        <div class="input-wrapper">
+          <i class="fas fa-user input-icon"></i>
+          <input 
+            type="text" 
+            class="form-input" 
+            id="username" 
+            placeholder="Voer je gebruikersnaam in"
+            required
+            autocomplete="username"
+          >
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Wachtwoord</label>
+        <div class="input-wrapper">
+          <i class="fas fa-lock input-icon"></i>
+          <input 
+            type="password" 
+            class="form-input" 
+            id="password" 
+            placeholder="Voer je wachtwoord in"
+            required
+            autocomplete="current-password"
+          >
+        </div>
+      </div>
+      
+      <button type="submit" class="btn-login" id="loginBtn">
+        <i class="fas fa-sign-in-alt"></i>
+        <span id="btnText">Inloggen</span>
+      </button>
+    </form>
+    
+    <div class="demo-accounts">
+      <div class="demo-title">🔑 Demo Accounts (Klik om in te vullen)</div>
+      
+      <div class="demo-account" onclick="fillLogin('admin', 'admin')">
+        <span class="demo-role">👨‍💼</span>
+        <div class="demo-info">
+          <div class="demo-name">Administrator</div>
+          <div class="demo-credentials">admin / admin</div>
+        </div>
+      </div>
+      
+      <div class="demo-account" onclick="fillLogin('leerkracht', 'leerkracht')">
+        <span class="demo-role">👩‍🏫</span>
+        <div class="demo-info">
+          <div class="demo-name">Leerkracht</div>
+          <div class="demo-credentials">leerkracht / leerkracht</div>
+        </div>
+      </div>
+      
+      <div class="demo-account" onclick="fillLogin('student', 'student')">
+        <span class="demo-role">👨‍🎓</span>
+        <div class="demo-info">
+          <div class="demo-name">Leerling</div>
+          <div class="demo-credentials">student / student</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      © 2024 ATLAS - Yoeran Moreel
+    </div>
+  </div>
+
+  <script>
+    // Form submission
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const btn = document.getElementById('loginBtn');
+      const btnText = document.getElementById('btnText');
+      const errorMsg = document.getElementById('errorMessage');
+      
+      // Disable button and show loading
+      btn.disabled = true;
+      btnText.innerHTML = '<div class="spinner"></div>';
+      errorMsg.classList.remove('show');
+      
+      // Call Apps Script login function
+      google.script.run
+        .withSuccessHandler(function(result) {
+          if (result.success) {
+            // Successful login - redirect based on role
+            const user = result.user;
+            
+            if (user.rol === 'student') {
+              // Redirect to student interface
+              window.location.href = '<?= ScriptApp.getService().getUrl() ?>?page=student&user=' + 
+                encodeURIComponent(user.username) + '&naam=' + encodeURIComponent(user.naam);
+            } else if (user.rol === 'teacher' || user.rol === 'admin') {
+              // Redirect to teacher dashboard
+              window.location.href = '<?= ScriptApp.getService().getUrl() ?>?page=teacher&user=' + 
+                encodeURIComponent(user.username) + '&naam=' + encodeURIComponent(user.naam) + 
+                '&role=' + encodeURIComponent(user.rol);
+            }
+          } else {
+            // Login failed
+            showError(result.message || 'Onjuiste inloggegevens');
+            btn.disabled = false;
+            btnText.textContent = 'Inloggen';
+          }
+        })
+        .withFailureHandler(function(error) {
+          showError('Verbindingsfout: ' + error.message);
+          btn.disabled = false;
+          btnText.textContent = 'Inloggen';
+        })
+        .loginUser(username, password);
+    });
+    
+    // Fill login fields with demo credentials
+    function fillLogin(username, password) {
+      document.getElementById('username').value = username;
+      document.getElementById('password').value = password;
+      document.getElementById('username').focus();
+    }
+    
+    // Show error message
+    function showError(message) {
+      const errorMsg = document.getElementById('errorMessage');
+      const errorText = document.getElementById('errorText');
+      errorText.textContent = message;
+      errorMsg.classList.add('show');
+    }
+    
+    // Auto-focus username field on load
+    window.onload = function() {
+      document.getElementById('username').focus();
+    };
+    
+    // Handle Enter key on demo accounts
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.target.closest('form')) {
+        document.getElementById('loginForm').dispatchEvent(new Event('submit'));
+      }
+    });
+  </script>
+</body>
+</html>
