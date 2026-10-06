@@ -1,12 +1,13 @@
-window.ATLAS_TOOLS = [
- {id:"rekenen",title:"Rekenen",description:"Rekenactiviteiten, oefensites en toekomstige ATLAS-rekentools.",icon:"➗",category:"Rekenen",type:"Categorie",url:"categories/rekenen.html",tags:["rekenen","som","breuken"],featured:true},
- {id:"spelling",title:"Spelling",description:"Oefenen met woorden, dictee en correcte schrijfwijze.",icon:"✏️",category:"Spelling",type:"Categorie",url:"categories/spelling.html",tags:["spelling","dictee","woorden"],featured:true},
- {id:"taal",title:"Taal",description:"Woordenschat, zinsbouw en taalactiviteiten.",icon:"💬",category:"Taal",type:"Categorie",url:"categories/taal.html",tags:["taal","woordenschat","zinsbouw"],featured:false},
- {id:"spellen",title:"Leerspellen",description:"Interactieve spellen en activiteiten voor in de klas.",icon:"🎮",category:"Spellen",type:"Categorie",url:"categories/spellen.html",tags:["spel","klas","interactief"],featured:true},
- {id:"quizzes",title:"Quizzes",description:"Kennis activeren en toetsen met korte quizactiviteiten.",icon:"🎓",category:"Quizzes",type:"Categorie",url:"categories/quizzes.html",tags:["quiz","kennis","toets"],featured:false},
- {id:"links",title:"Handige websites",description:"Een groeiende verzameling externe onderwijsbronnen.",icon:"🔗",category:"Websites",type:"Website",url:"categories/handige-links.html",tags:["links","websites","bronnen"],featured:true},
- {id:"extra",title:"Extra",description:"Creatieve opdrachten, projecten en klasuitdagingen.",icon:"✨",category:"Extra",type:"Categorie",url:"categories/extra.html",tags:["creatief","project","uitdaging"],featured:false},
- {id:"contextsommen",title:"Contextsommen",description:"ATLAS-tool voor gerichte verhaalsommen. Staat klaar voor een volgende bouwbatch.",icon:"🧠",category:"Rekenen",type:"ATLAS",url:null,tags:["rekenen","contextsommen","verhaalsommen"],featured:true,status:"soon"},
- {id:"timer",title:"Klassentimer",description:"Eenvoudige visuele timer voor digibord en zelfstandig werken.",icon:"⏱️",category:"Extra",type:"ATLAS",url:null,tags:["timer","tijd","digibord"],featured:true,status:"soon"},
- {id:"groepjes",title:"Groepjesmaker",description:"Maak snel willekeurige groepjes of duo's voor een activiteit.",icon:"👥",category:"Extra",type:"ATLAS",url:null,tags:["groepjes","duo","random"],featured:false,status:"soon"}
+window.ATLAS_TOOLS=[
+{id:"timer",title:"Klassentimer",desc:"Een rustige, grote timer voor op het digibord.",icon:"⏱️",section:"Bordtools",category:"Tijd",type:"ATLAS",tags:["timer","tijd","digibord"],status:"soon",featured:true},
+{id:"noise",title:"Geluidswereld",desc:"Laat een wereld groeien zolang de klas rustig werkt.",icon:"🌳",section:"Bordtools",category:"Klassenmanagement",type:"ATLAS",tags:["geluid","microfoon","stil","klas"],status:"soon",featured:true},
+{id:"groups",title:"Groepjesmaker",desc:"Maak razendsnel willekeurige groepjes of duo's.",icon:"👥",section:"Bordtools",category:"Klassenmanagement",type:"ATLAS",tags:["groepjes","duo","random"],status:"soon",featured:true},
+{id:"wheel",title:"Draaiwiel",desc:"Kies willekeurig een naam, opdracht of antwoord.",icon:"🎡",section:"Bordtools",category:"Kiezen",type:"ATLAS",tags:["rad","random","naam"],status:"soon",featured:true},
+{id:"traffic",title:"Stoplicht",desc:"Visuele afspraak voor zelfstandig werken en overleggen.",icon:"🚦",section:"Bordtools",category:"Klassenmanagement",type:"ATLAS",tags:["stoplicht","werken","stil"],status:"soon"},
+{id:"dice",title:"Dobbelstenen",desc:"Digitale dobbelstenen voor spel en instructie.",icon:"🎲",section:"Bordtools",category:"Kiezen",type:"ATLAS",tags:["dobbelsteen","spel"],status:"soon"},
+{id:"contexts",title:"Contextsommen",desc:"Maak gerichte verhaalsommen passend bij groep en niveau.",icon:"🧠",section:"Les-tools",category:"Rekenen",type:"ATLAS",tags:["rekenen","contextsommen","verhaalsommen"],status:"soon",featured:true},
+{id:"dictation",title:"Dictee-tool",desc:"Bouw snel een dictee of oefenlijst voor spelling.",icon:"✏️",section:"Les-tools",category:"Spelling",type:"ATLAS",tags:["spelling","dictee","woorden"],status:"soon"},
+{id:"quiz",title:"Quizmaker",desc:"Zet snel klassikale vragen klaar voor je les.",icon:"🎓",section:"Les-tools",category:"Quiz",type:"ATLAS",tags:["quiz","vragen","kennis"],status:"soon"},
+{id:"shysafari",title:"Shy Safari",desc:"Externe geluidsmeter waarbij dieren verschijnen als de klas rustig blijft.",icon:"🦒",section:"Bronnen",category:"Klassenmanagement",type:"Extern",tags:["geluid","rust","microfoon"],url:"https://shysafari.com"},
+{id:"teacherdev",title:"Teacher.dev",desc:"Verzameling creatieve, gratis webtools voor leerkrachten.",icon:"🧰",section:"Bronnen",category:"Toolbox",type:"Extern",tags:["tools","teacher","digibord"],url:"https://teacher.dev"}
 ];
