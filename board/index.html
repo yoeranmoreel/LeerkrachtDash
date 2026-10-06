@@ -1,12 +1,12 @@
 <!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#111827"><title>ATLAS Board</title><link rel="icon" href="../icons/icon.svg"><link rel="stylesheet" href="board.css"></head><body>
-<header class="bar"><a class="back" href="../">← <b>ATLAS</b></a><span class="boardname">Nieuw bord</span><div class="bar-actions"><button id="fullscreen" title="Volledig scherm">⛶</button><button id="clear">Alles wissen</button></div></header>
+<header class="bar"><a class="back" href="../">← <b>ATLAS</b></a><span class="boardname">Nieuw bord</span><div class="bar-actions"><button id="openBoard">Openen</button><button id="saveBoard">Opslaan</button><button id="fullscreen" title="Volledig scherm">⛶</button><button id="clear">Alles wissen</button></div></header>
 <div class="toolbar">
 <button class="tool active" data-tool="pen" title="Pen"><b>✎</b><span>Pen</span></button>
 <button class="tool" data-tool="highlighter" title="Markeerstift"><b>▰</b><span>Markeren</span></button>
-<button class="tool" data-tool="eraser" title="Gum"><b>⌫</b><span>Gum</span></button>
+<button class="tool" data-tool="eraser" title="Gum"><b>⌫</b><span>Gum</span></button><button class="tool" data-tool="text" title="Typen"><b>T</b><span>Typen</span></button>
 <span class="divider"></span><label class="color" title="Kleur"><input id="color" type="color" value="#172033"><span></span></label><select id="size"><option value="3">Dun</option><option value="6" selected>Normaal</option><option value="12">Dik</option><option value="24">Extra dik</option></select>
 <span class="divider"></span><button id="undo">↶</button><button id="redo">↷</button><span class="divider"></span>
 <div class="background-picker"><button id="backgroundButton">▦ Achtergrond</button><div id="backgroundMenu" class="popover" hidden><b>Achtergrond</b><div class="bg-options"><button data-bg="plain"><i class="preview plain"></i>Wit</button><button data-bg="dots"><i class="preview dots"></i>Stippen</button><button data-bg="grid"><i class="preview grid"></i>Ruitjes</button><button data-bg="lines"><i class="preview lines"></i>Lijnen</button><button data-bg="dark"><i class="preview dark"></i>Donker</button></div></div></div>
 <span class="divider"></span><button id="addTimer" class="widgetbutton">＋ Timer</button></div>
-<main id="stage" class="bg-plain"><canvas id="board"></canvas><div id="widgets"></div></main>
+<main id="stage" class="bg-plain"><canvas id="board"></canvas><div id="texts"></div><div id="widgets"></div></main><dialog id="boardsDialog"><div class="dialog-head"><b>Mijn borden</b><button id="closeBoards">×</button></div><div id="boardsList"></div></dialog>
 <script src="board.js"></script></body></html>
