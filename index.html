@@ -1,64 +1,11 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#5b5cf0">
-  <meta name="description" content="ATLAS: één startpunt voor handige onderwijswebsites en slimme leerkrachttools.">
-  <title>ATLAS · Onderwijsdashboard</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="shell">
-    <header class="topbar">
-      <a class="brand" href="./" aria-label="ATLAS home">
-        <span class="brand-mark">A</span>
-        <span><strong>ATLAS</strong><small>Teaching & Learning Hub</small></span>
-      </a>
-      <button id="installButton" class="install-button" hidden>Installeer app</button>
-    </header>
-
-    <main>
-      <section class="hero">
-        <span class="eyebrow">Jouw digitale onderwijsstartpunt</span>
-        <h1>Wat heb je vandaag nodig?</h1>
-        <p>Zoek een tool, website of activiteit. ATLAS brengt eigen tools en handige onderwijsbronnen samen.</p>
-        <label class="search">
-          <span aria-hidden="true">⌕</span>
-          <input id="searchInput" type="search" placeholder="Zoek bijvoorbeeld rekenen, timer of spelling…" autocomplete="off">
-          <kbd>/</kbd>
-        </label>
-        <div id="filters" class="filters" aria-label="Filter op categorie"></div>
-      </section>
-
-      <section class="section">
-        <div class="section-heading">
-          <div><span class="eyebrow">Snel starten</span><h2>Favorieten</h2></div>
-          <span id="resultCount" class="result-count"></span>
-        </div>
-        <div id="featuredGrid" class="tool-grid"></div>
-      </section>
-
-      <section class="section">
-        <div class="section-heading">
-          <div><span class="eyebrow">Alles op één plek</span><h2>Ontdek ATLAS</h2></div>
-        </div>
-        <div id="toolGrid" class="tool-grid"></div>
-        <div id="emptyState" class="empty-state" hidden>
-          <strong>Niets gevonden.</strong>
-          <span>Probeer een ander zoekwoord of kies ‘Alles’.</span>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <span>ATLAS · Advanced Teaching & Learning Activity System</span>
-      <span>Gemaakt voor het onderwijs.</span>
-    </footer>
-  </div>
-  <script src="data.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#5b5cf0"><meta name="description" content="ATLAS: de digitale toolbox voor leerkrachten."><title>ATLAS · Teacher Toolbox</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg"><link rel="stylesheet" href="styles.css"></head>
+<body><div class="app">
+<aside class="sidebar"><a class="brand" href="./"><span class="brandmark">A</span><span><b>ATLAS</b><small>Teacher Toolbox</small></span></a>
+<nav id="mainNav"><button class="nav active" data-view="home">⌂ <span>Start</span></button><button class="nav" data-view="Bordtools">▣ <span>Bordtools</span></button><button class="nav" data-view="Les-tools">✎ <span>Les-tools</span></button><button class="nav" data-view="Bronnen">↗ <span>Bronnen</span></button></nav>
+<div class="sidefoot"><button id="installButton" class="install" hidden>＋ Installeer ATLAS</button><small>PWA · werkt ook offline</small></div></aside>
+<div class="workspace"><header class="topbar"><button id="menuButton" class="menubtn">☰</button><label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Zoek in ATLAS…"><kbd>/</kbd></label><div class="status"><i></i> ATLAS v2</div></header>
+<main><section class="welcome"><div><span class="eyebrow">Teacher dashboard</span><h1 id="pageTitle">Goedenavond 👋</h1><p id="pageIntro">Alles wat je voor je les nodig hebt, zonder twaalf tabbladen open te hebben.</p></div><button class="primary" data-view-jump="Bordtools">Open bordtools →</button></section>
+<section id="quickSection"><div class="sectionhead"><div><span class="eyebrow">Snel starten</span><h2>Voor op het bord</h2></div></div><div id="quickGrid" class="grid"></div></section>
+<section><div class="sectionhead"><div><span class="eyebrow" id="collectionLabel">Toolbox</span><h2 id="collectionTitle">Alles in ATLAS</h2></div><span id="resultCount"></span></div><div id="filters" class="chips"></div><div id="toolGrid" class="grid"></div><div id="emptyState" class="empty" hidden><b>Niets gevonden</b><span>Probeer een ander zoekwoord of filter.</span></div></section>
+</main><footer>ATLAS · Advanced Teaching & Learning Activity System <span>Gebouwd voor leerkrachten.</span></footer></div></div>
+<script src="data.js"></script><script src="app.js"></script></body></html>
