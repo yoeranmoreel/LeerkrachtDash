@@ -10,3 +10,13 @@
 .traffic-label{margin-top:7px;font-size:16px}
 
 #overlaySize{width:170px}.tool-actions{z-index:10}.tool-actions button{font-size:14px}.text-object.selected .tool-actions{display:flex}
+/* Touch-first Board interaction */
+.stroke-hit{fill:none;stroke-linecap:round;stroke-linejoin:round;pointer-events:stroke}
+@media (pointer:coarse){
+  .dock button{min-width:48px;min-height:48px}
+  .dock select{min-height:48px}
+  .toolgrid button{min-height:84px}
+  .panelhead button,.tool-actions button{min-width:44px;min-height:44px}
+  .contextbar button,.contextbar select,.contextbar input{min-height:44px}
+  .panel{max-height:min(68vh,620px)}
+}
