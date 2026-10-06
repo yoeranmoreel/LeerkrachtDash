@@ -34,3 +34,6 @@
 .resize-handle{display:none;position:absolute;right:-22px;bottom:-22px;width:46px;height:46px;border:2px solid #6d5ce7;border-radius:50%;background:#fff;color:#4e3ed1;font-size:24px;font-weight:900;z-index:30;touch-action:none;cursor:nwse-resize;align-items:center;justify-content:center;padding:0}
 .board-object.selected>.resize-handle{display:flex}
 .text-object-actions{gap:6px;align-items:center}.text-resize-handle{width:44px;height:44px;border:2px solid #6d5ce7;border-radius:50%;background:#fff;color:#4e3ed1;font-size:22px;font-weight:900;touch-action:none;padding:0}
+
+.marquee{position:absolute;z-index:40;border:2px solid #6d5ce7;background:rgba(109,92,231,.12);pointer-events:none;border-radius:4px}
+.clock-ticks{position:absolute;inset:0;border-radius:50%}.clock-tick{position:absolute;left:50%;top:5px;width:1px;height:6px;background:#6b7280;transform-origin:50% 85px}.clock-tick.major{top:4px;width:2px;height:11px;background:#172033}.clock-pin{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:#172033;z-index:4}
