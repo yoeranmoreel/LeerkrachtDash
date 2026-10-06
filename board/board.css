@@ -20,3 +20,5 @@
   .contextbar button,.contextbar select,.contextbar input{min-height:44px}
   .panel{max-height:min(68vh,620px)}
 }
+
+.text-object-actions{position:absolute;z-index:12;display:none;pointer-events:auto}.text-object-actions.visible{display:block}.text-object-actions button{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:#fff;box-shadow:0 4px 14px #0002;font-size:18px;padding:0}
