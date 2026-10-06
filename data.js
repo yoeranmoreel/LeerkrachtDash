@@ -1,0 +1,12 @@
+window.ATLAS_TOOLS = [
+ {id:"rekenen",title:"Rekenen",description:"Rekenactiviteiten, oefensites en toekomstige ATLAS-rekentools.",icon:"➗",category:"Rekenen",type:"Categorie",url:"categories/rekenen.html",tags:["rekenen","som","breuken"],featured:true},
+ {id:"spelling",title:"Spelling",description:"Oefenen met woorden, dictee en correcte schrijfwijze.",icon:"✏️",category:"Spelling",type:"Categorie",url:"categories/spelling.html",tags:["spelling","dictee","woorden"],featured:true},
+ {id:"taal",title:"Taal",description:"Woordenschat, zinsbouw en taalactiviteiten.",icon:"💬",category:"Taal",type:"Categorie",url:"categories/taal.html",tags:["taal","woordenschat","zinsbouw"],featured:false},
+ {id:"spellen",title:"Leerspellen",description:"Interactieve spellen en activiteiten voor in de klas.",icon:"🎮",category:"Spellen",type:"Categorie",url:"categories/spellen.html",tags:["spel","klas","interactief"],featured:true},
+ {id:"quizzes",title:"Quizzes",description:"Kennis activeren en toetsen met korte quizactiviteiten.",icon:"🎓",category:"Quizzes",type:"Categorie",url:"categories/quizzes.html",tags:["quiz","kennis","toets"],featured:false},
+ {id:"links",title:"Handige websites",description:"Een groeiende verzameling externe onderwijsbronnen.",icon:"🔗",category:"Websites",type:"Website",url:"categories/handige-links.html",tags:["links","websites","bronnen"],featured:true},
+ {id:"extra",title:"Extra",description:"Creatieve opdrachten, projecten en klasuitdagingen.",icon:"✨",category:"Extra",type:"Categorie",url:"categories/extra.html",tags:["creatief","project","uitdaging"],featured:false},
+ {id:"contextsommen",title:"Contextsommen",description:"ATLAS-tool voor gerichte verhaalsommen. Staat klaar voor een volgende bouwbatch.",icon:"🧠",category:"Rekenen",type:"ATLAS",url:null,tags:["rekenen","contextsommen","verhaalsommen"],featured:true,status:"soon"},
+ {id:"timer",title:"Klassentimer",description:"Eenvoudige visuele timer voor digibord en zelfstandig werken.",icon:"⏱️",category:"Extra",type:"ATLAS",url:null,tags:["timer","tijd","digibord"],featured:true,status:"soon"},
+ {id:"groepjes",title:"Groepjesmaker",description:"Maak snel willekeurige groepjes of duo's voor een activiteit.",icon:"👥",category:"Extra",type:"ATLAS",url:null,tags:["groepjes","duo","random"],featured:false,status:"soon"}
+];
